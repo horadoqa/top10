@@ -1,4 +1,5 @@
 const axios = require("axios");
+require('dotenv').config();
 
 const CHANNEL_ID = process.env.CHANNEL_ID;
 
