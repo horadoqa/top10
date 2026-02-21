@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-const CHANNEL_ID = "SEU_CHANNEL_ID";
+const CHANNEL_ID = process.env.CHANNEL_ID;
 
 function formatNumber(number) {
   return new Intl.NumberFormat("pt-BR").format(number);
