@@ -2,6 +2,9 @@
 
 Os vídeos mais acessados no canal
 
+<div align="center">
+<img src="./assets/images/screencapture.png">
+</div>
  Dashboard visual para acompanhar a evolução semanal dos **10 vídeos mais assistidos do canal Hora do QA**.
 
  O projeto apresenta um comparativo entre a **semana anterior** e a **semana atual**, permitindo visualizar de forma rápida quais vídeos cresceram, como o ranking se comportou e qual foi a evolução geral das visualizações.
