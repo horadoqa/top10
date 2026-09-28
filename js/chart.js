@@ -1,8 +1,6 @@
 function renderChart(videos) {
 
-    const canvas =
-        document.getElementById("top10Chart");
-
+    const canvas = document.getElementById("top10Chart");
     const ctx = canvas.getContext("2d");
 
     const labels = videos.map(video => {
@@ -17,16 +15,54 @@ function renderChart(videos) {
     });
 
 
-    // Gradiente da semana atual
-    const gradient = ctx.createLinearGradient(
+    /*
+     * PALETA
+     *
+     * Verde profundo: #0F3D2E
+     * Verde-musgo:    #3F6F52
+     * Verde-sinal:    #8FE3B0
+     * Dourado:        #C99A44
+     * Marfim:         #F3EFE6
+     * Tinta:          #12201A
+     */
+
+
+    // Gradiente sutil da semana atual
+    const currentGradient = ctx.createLinearGradient(
         0,
         0,
         0,
         500
     );
 
-    gradient.addColorStop(0, "#8b85ff");
-    gradient.addColorStop(1, "#00d4ff");
+    currentGradient.addColorStop(
+        0,
+        "rgba(143, 227, 176, 0.95)"
+    );
+
+    currentGradient.addColorStop(
+        1,
+        "rgba(63, 111, 82, 0.75)"
+    );
+
+
+    // Gradiente discreto da semana anterior
+    const previousGradient = ctx.createLinearGradient(
+        0,
+        0,
+        0,
+        500
+    );
+
+    previousGradient.addColorStop(
+        0,
+        "rgba(63, 111, 82, 0.65)"
+    );
+
+    previousGradient.addColorStop(
+        1,
+        "rgba(63, 111, 82, 0.35)"
+    );
 
 
     new Chart(ctx, {
@@ -46,14 +82,13 @@ function renderChart(videos) {
                         video => video.previous
                     ),
 
-                    backgroundColor:
-                        "rgba(71,85,105,.55)",
+                    backgroundColor: previousGradient,
 
-                    borderColor: "#64748b",
+                    borderColor: "#3F6F52",
 
                     borderWidth: 1,
 
-                    borderRadius: 7,
+                    borderRadius: 4,
 
                     borderSkipped: false
                 },
@@ -65,13 +100,13 @@ function renderChart(videos) {
                         video => video.current
                     ),
 
-                    backgroundColor: gradient,
+                    backgroundColor: currentGradient,
 
-                    borderColor: "#8b85ff",
+                    borderColor: "#8FE3B0",
 
                     borderWidth: 1,
 
-                    borderRadius: 7,
+                    borderRadius: 4,
 
                     borderSkipped: false
                 }
@@ -98,22 +133,50 @@ function renderChart(videos) {
 
                 tooltip: {
 
-                    backgroundColor: "#0b1020",
+                    backgroundColor: "#12201A",
 
-                    borderColor:
-                        "rgba(255,255,255,.10)",
+                    borderColor: "rgba(143, 227, 176, 0.22)",
 
                     borderWidth: 1,
 
-                    titleColor: "#fff",
+                    cornerRadius: 6,
 
-                    bodyColor: "#cbd5e1",
+                    padding: {
+                        top: 12,
+                        bottom: 12,
+                        left: 14,
+                        right: 14
+                    },
 
-                    padding: 14,
+                    displayColors: true,
+
+                    boxWidth: 7,
+                    boxHeight: 7,
+                    boxPadding: 5,
+
+                    titleMarginBottom: 9,
+
+                    titleColor: "#F3EFE6",
+
+                    bodyColor: "#B7C4BC",
+
+                    titleFont: {
+                        family: "JetBrains Mono",
+                        size: 10,
+                        weight: "600"
+                    },
+
+                    bodyFont: {
+                        family: "JetBrains Mono",
+                        size: 10,
+                        weight: "500"
+                    },
+
+                    bodySpacing: 5,
 
                     callbacks: {
 
-                        title: function(context) {
+                        title: function (context) {
 
                             return videos[
                                 context[0].dataIndex
@@ -121,37 +184,63 @@ function renderChart(videos) {
 
                         },
 
-                        label: function(context) {
+                        label: function (context) {
 
-                            return `
-                                ${context.dataset.label}:
-                                ${formatNumber(context.raw)}
-                                visualizações
-                            `;
+                            return (
+                                " " +
+                                context.dataset.label +
+                                "    " +
+                                formatNumber(context.raw)
+                            );
+
                         }
                     }
                 }
+
+
             },
 
             scales: {
 
-                x: {
+                // x: {
 
+                //     grid: {
+                //         display: false
+                //     },
+
+                //     border: {
+                //         display: false
+                //     },
+
+                //     ticks: {
+
+                //         color: "#899990",
+
+                //         font: {
+                //             family: "JetBrains Mono",
+                //             size: 9,
+                //             weight: "500"
+                //         },
+
+                //         maxRotation: 45,
+
+                //         minRotation: 25,
+
+                //         padding: 8
+                //     }
+                // },
+
+                x: {
                     grid: {
                         display: false
                     },
 
+                    border: {
+                        display: false
+                    },
+
                     ticks: {
-
-                        color: "#94a3b8",
-
-                        font: {
-                            size: 10
-                        },
-
-                        maxRotation: 45,
-
-                        minRotation: 25
+                        display: false
                     }
                 },
 
@@ -159,17 +248,30 @@ function renderChart(videos) {
 
                     beginAtZero: true,
 
+                    border: {
+                        display: false
+                    },
+
                     grid: {
 
                         color:
-                            "rgba(255,255,255,.06)"
+                            "rgba(243, 239, 230, 0.07)",
+
+                        drawTicks: false
                     },
 
                     ticks: {
 
-                        color: "#64748b",
+                        color: "#718278",
 
-                        callback: function(value) {
+                        padding: 10,
+
+                        font: {
+                            family: "JetBrains Mono",
+                            size: 9
+                        },
+
+                        callback: function (value) {
 
                             return formatNumber(value);
 

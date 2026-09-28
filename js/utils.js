@@ -48,3 +48,38 @@ function getRankEmoji(rank) {
 
     return rank;
 }
+
+function getVideoShortName(title) {
+
+    const titleLower = title.toLowerCase();
+
+    if (titleLower.includes("playwright")) {
+        return "Playwright";
+    }
+
+    if (titleLower.includes("cypress")) {
+        return "Cypress";
+    }
+
+    if (titleLower.includes("postman")) {
+        return "Postman";
+    }
+
+    if (titleLower.includes("grafana")) {
+        return "Grafana k6";
+    }
+
+    if (titleLower.includes("jmeter")) {
+        return "JMeter";
+    }
+
+    if (titleLower.includes("robot framework")) {
+        return "Robot Framework";
+    }
+
+    if (titleLower.includes("manuais")) {
+        return "Testes Manuais";
+    }
+
+    return title;
+}

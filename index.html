@@ -33,7 +33,7 @@
             </div>
 
             <div class="week-badge">
-                Evolução semanal - 39
+                Evolução semanal - <span id="week"></span>
             </div>
 
         </header>
@@ -50,14 +50,27 @@
 
             <div class="summary-card">
                 <div class="label">Maior crescimento</div>
-                <div class="value">+97</div>
-                <div class="change">Playwright</div>
+
+                <div class="value">
+                    <span id="maior-crescimento">-</span>
+                </div>
+
+                <div class="change" id="maior-crescimento-video">
+                    -
+                </div>
             </div>
+
 
             <div class="summary-card">
                 <div class="label">Líder do ranking</div>
-                <div class="value">#1</div>
-                <div class="change">Playwright</div>
+
+                <div class="value" id="lider-ranking">
+                    -
+                </div>
+
+                <div class="change" id="lider-ranking-video">
+                    -
+                </div>
             </div>
 
             <div class="summary-card">
@@ -140,7 +153,9 @@
         <script src="js/utils.js"></script>
         <script src="js/ranking.js"></script>
         <script src="js/chart.js"></script>
-        <script src="js/app.js"></script>
+        <script src="js/app.js"></script>F
+        <script src="js/semana.js"></script>
+        <script src="js/up.js"></script>
 
     </div>
 
