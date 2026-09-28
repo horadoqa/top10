@@ -1,17 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Newsreader:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
 :root {
-    --bg: #080b14;
-    --card: #101522;
-    --card-hover: #151c2d;
-    --primary: #6c63ff;
-    --primary-light: #8b85ff;
-    --cyan: #00d4ff;
-    --green: #22c55e;
-    --red: #ef4444;
-    --yellow: #facc15;
-    --text: #f8fafc;
-    --muted: #94a3b8;
-    --border: rgba(255, 255, 255, 0.08);
+    /* IDENTIDADE VISUAL */
+    --deep-green: #0F3D2E;
+    --moss: #3F6F52;
+    --signal: #8FE3B0;
+    --gold: #C99A44;
+    --ivory: #F3EFE6;
+    --ink: #12201A;
+
+    /* SISTEMA */
+    --bg: #0b2119;
+    --card: #12201A;
+    --card-hover: #173025;
+
+    --primary: var(--deep-green);
+    --primary-light: var(--signal);
+
+    --text: #F3EFE6;
+    --muted: #9EAEA4;
+
+    --border: rgba(243, 239, 230, 0.12);
+    --border-strong: rgba(143, 227, 176, 0.25);
+
+    --red: #D96C5F;
+    --yellow: var(--gold);
+
+    --radius: 16px;
 }
+
+/* ==============================
+   RESET
+   ============================== */
 
 * {
     box-sizing: border-box;
@@ -20,15 +40,29 @@
 }
 
 body {
-    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, Helvetica, Arial, sans-serif;
+    font-family: "Manrope", -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+
     background:
-        radial-gradient(circle at 10% 0%, rgba(108, 99, 255, .18), transparent 30%),
-        radial-gradient(circle at 90% 10%, rgba(0, 212, 255, .10), transparent 25%),
+        radial-gradient(
+            circle at 8% 0%,
+            rgba(63, 111, 82, 0.22),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 92% 15%,
+            rgba(201, 154, 68, 0.07),
+            transparent 25%
+        ),
         var(--bg);
+
     color: var(--text);
     min-height: 100vh;
 }
+
+/* ==============================
+   CONTAINER
+   ============================== */
 
 .container {
     width: min(1400px, 94%);
@@ -36,7 +70,10 @@ body {
     padding: 35px 0 60px;
 }
 
-/* HEADER */
+/* ==============================
+   HEADER
+   ============================== */
+
 header {
     display: flex;
     justify-content: space-between;
@@ -51,10 +88,12 @@ header {
     gap: 18px;
 }
 
+/* LOGO */
+
 .logo {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+    width: 86px;
+    height: 86px;
+    border-radius: 14px;
 
     display: flex;
     align-items: center;
@@ -62,10 +101,13 @@ header {
 
     overflow: hidden;
 
+    /* background: var(--deep-green); */
+
+    /* border: 1px solid rgba(143, 227, 176, 0.18); */
+
     box-shadow:
-        0 0 0 3px rgba(108, 99, 255, 0.15),
-        0 0 20px rgba(108, 99, 255, 0.45),
-        0 0 50px rgba(0, 212, 255, 0.25);
+        0 12px 35px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(243, 239, 230, 0.04);
 }
 
 .logo img {
@@ -74,138 +116,294 @@ header {
     object-fit: contain;
 
     filter:
-        drop-shadow(0 0 8px rgba(108, 99, 255, 0.5)) drop-shadow(0 0 20px rgba(0, 212, 255, 0.3));
+        drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
 }
 
+/* TITLE */
+
 .title h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 900;
+    font-family: "Newsreader", Georgia, serif;
+
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 600;
+
+    font-style: italic;
+
     letter-spacing: -2px;
-    background: linear-gradient(90deg, #fff, #aaa5ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    line-height: 0.95;
+
+    color: var(--ivory);
 }
 
 .title p {
     color: var(--muted);
-    margin-top: 4px;
-    font-size: 14px;
+    margin-top: 8px;
+
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 11px;
+    letter-spacing: 0.5px;
 }
+
+/* WEEK BADGE */
 
 .week-badge {
-    background: rgba(108, 99, 255, .12);
-    border: 1px solid rgba(108, 99, 255, .30);
-    padding: 12px 18px;
-    border-radius: 30px;
-    color: var(--primary-light);
-    font-size: 13px;
-    font-weight: 700;
+    background: rgba(143, 227, 176, 0.06);
+
+    border: 1px solid rgba(143, 227, 176, 0.25);
+
+    padding: 10px 14px;
+    border-radius: 6px;
+
+    color: var(--signal);
+
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 11px;
+    font-weight: 600;
+
     white-space: nowrap;
+
+    letter-spacing: 0.3px;
 }
 
-/* SUMMARY */
+.week-badge::before {
+    content: "●";
+    margin-right: 7px;
+
+    color: var(--signal);
+    font-size: 8px;
+}
+
+/* ==============================
+   SUMMARY
+   ============================== */
+
 .summary {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
+
+    gap: 12px;
+
     margin-bottom: 25px;
 }
 
 .summary-card {
-    background: rgba(16, 21, 34, .82);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(18, 32, 26, 0.96),
+            rgba(15, 61, 46, 0.45)
+        );
+
     border: 1px solid var(--border);
-    border-radius: 18px;
+
+    border-radius: 12px;
+
     padding: 20px;
-    backdrop-filter: blur(15px);
+
+    position: relative;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.summary-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 3px;
+    height: 100%;
+
+    background: var(--moss);
 }
 
 .summary-card .label {
     color: var(--muted);
-    font-size: 12px;
+
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 10px;
+
     text-transform: uppercase;
+
     letter-spacing: 1px;
-    margin-bottom: 8px;
+
+    margin-bottom: 9px;
 }
 
 .summary-card .value {
+    font-family: "Manrope", sans-serif;
+
     font-size: 28px;
     font-weight: 800;
+
+    color: var(--ivory);
+
+    letter-spacing: -1px;
 }
 
 .summary-card .change {
-    color: var(--green);
-    font-size: 13px;
-    font-weight: 700;
-    margin-top: 6px;
+    color: var(--signal);
+
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    margin-top: 7px;
 }
 
-/* CHART */
+/* ==============================
+   CHART
+   ============================== */
+
 .chart-card {
-    background: rgba(16, 21, 34, .86);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(18, 32, 26, 0.98),
+            rgba(15, 61, 46, 0.38)
+        );
+
     border: 1px solid var(--border);
-    border-radius: 24px;
+
+    border-radius: 16px;
+
     padding: 28px;
+
     margin-bottom: 30px;
-    box-shadow: 0 25px 80px rgba(0, 0, 0, .20);
-    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.22);
+
+    position: relative;
+}
+
+.chart-card::before {
+    content: "ANALYSIS";
+
+    position: absolute;
+
+    top: 18px;
+    right: 24px;
+
+    color: rgba(143, 227, 176, 0.35);
+
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
 }
 
 .section-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     margin-bottom: 25px;
+
     gap: 20px;
 }
 
 .section-header h2 {
-    font-size: 20px;
+    font-family: "Newsreader", Georgia, serif;
+
+    font-size: 25px;
+    font-weight: 600;
+
+    font-style: italic;
+
+    color: var(--ivory);
+
+    letter-spacing: -0.5px;
 }
 
 .section-header p {
     color: var(--muted);
-    font-size: 13px;
-    margin-top: 4px;
+
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 10px;
+
+    margin-top: 6px;
+
+    letter-spacing: 0.2px;
 }
+
+/* LEGEND */
 
 .legend {
     display: flex;
+
     gap: 18px;
-    font-size: 12px;
+
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 10px;
+
     color: var(--muted);
 }
 
 .legend span {
     display: flex;
     align-items: center;
+
     gap: 7px;
 }
 
 .dot {
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+
+    border-radius: 2px;
 }
 
 .dot.previous {
-    background: #475569;
+    background: var(--moss);
 }
 
 .dot.current {
-    background: linear-gradient(90deg, var(--primary), var(--cyan));
+    background: var(--signal);
+
+    box-shadow:
+        0 0 10px rgba(143, 227, 176, 0.25);
 }
 
 .chart-wrapper {
     height: 480px;
 }
 
-/* TABLE */
+/* ==============================
+   TABLE / RANKING
+   ============================== */
+
 .ranking {
-    background: rgba(16, 21, 34, .86);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(18, 32, 26, 0.98),
+            rgba(15, 61, 46, 0.35)
+        );
+
     border: 1px solid var(--border);
-    border-radius: 24px;
+
+    border-radius: 16px;
+
     padding: 28px;
+
     overflow: hidden;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.16);
 }
 
 .ranking-table {
@@ -214,18 +412,28 @@ header {
 }
 
 .ranking-table th {
-    color: var(--muted);
-    font-size: 11px;
+    color: #718278;
+
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 9px;
+
     text-transform: uppercase;
-    letter-spacing: .8px;
+
+    letter-spacing: 1px;
+
     text-align: left;
+
     padding: 14px 10px;
+
     border-bottom: 1px solid var(--border);
 }
 
 .ranking-table td {
     padding: 17px 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, .05);
+
+    border-bottom: 1px solid rgba(243, 239, 230, 0.06);
+
     vertical-align: middle;
 }
 
@@ -234,73 +442,129 @@ header {
 }
 
 .ranking-table tbody tr {
-    transition: .2s ease;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
 }
 
 .ranking-table tbody tr:hover {
-    background: rgba(255, 255, 255, .025);
+    background: rgba(143, 227, 176, 0.025);
 }
+
+/* POSITION */
 
 .position {
     width: 45px;
-    font-size: 20px;
-    font-weight: 900;
-    color: #64748b;
+
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    color: #61736A;
 }
 
 .position.top {
-    color: var(--yellow);
+    color: var(--gold);
 }
 
+/* VIDEO TITLE */
+
 .video-title {
+    font-family: "Manrope", sans-serif;
+
     font-weight: 650;
+
     font-size: 14px;
+
     line-height: 1.4;
+
     max-width: 550px;
+
+    color: var(--ivory);
 }
 
 .video-title a {
     color: inherit;
+
     text-decoration: none;
+
+    transition: color 0.2s ease;
 }
 
 .video-title a:hover {
-    color: var(--cyan);
+    color: var(--signal);
 }
 
+/* VIEWS */
+
 .views {
-    font-weight: 800;
+    font-family: "JetBrains Mono", monospace;
+
+    font-weight: 600;
+
+    font-size: 13px;
+
     font-variant-numeric: tabular-nums;
+
+    color: var(--ivory);
 }
 
 .previous-value {
-    color: #94a3b8;
+    color: #718278;
+
+    font-family: "JetBrains Mono", monospace;
 }
 
 .current-value {
-    color: #fff;
+    color: var(--ivory);
+
+    font-family: "JetBrains Mono", monospace;
 }
+
+/* GROWTH */
 
 .growth {
     display: inline-flex;
+
     align-items: center;
+
     gap: 5px;
-    background: rgba(34, 197, 94, .10);
-    color: var(--green);
-    border: 1px solid rgba(34, 197, 94, .15);
+
+    background: rgba(143, 227, 176, 0.07);
+
+    color: var(--signal);
+
+    border: 1px solid rgba(143, 227, 176, 0.18);
+
     padding: 5px 9px;
-    border-radius: 8px;
-    font-size: 12px;
-    font-weight: 800;
+
+    border-radius: 5px;
+
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.2px;
 }
 
+/* ==============================
+   RANK CHANGE
+   ============================== */
+
 .rank-change {
-    font-size: 12px;
-    font-weight: 800;
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 10px;
+
+    font-weight: 700;
 }
 
 .up {
-    color: var(--green);
+    color: var(--signal);
 }
 
 .down {
@@ -308,23 +572,39 @@ header {
 }
 
 .same {
-    color: var(--muted);
+    color: #718278;
 }
 
-/* FOOTER */
+/* ==============================
+   FOOTER
+   ============================== */
+
 footer {
     text-align: center;
-    color: #64748b;
-    font-size: 12px;
+
+    color: #61736A;
+
+    font-family: "JetBrains Mono", monospace;
+
+    font-size: 10px;
+
     margin-top: 30px;
+
+    letter-spacing: 0.3px;
 }
 
 footer strong {
-    color: var(--primary-light);
+    color: var(--gold);
+
+    font-weight: 600;
 }
 
-/* RESPONSIVE */
+/* ==============================
+   RESPONSIVE
+   ============================== */
+
 @media (max-width: 900px) {
+
     .summary {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -351,6 +631,7 @@ footer strong {
 }
 
 @media (max-width: 600px) {
+
     .container {
         padding-top: 20px;
     }
@@ -360,18 +641,30 @@ footer strong {
     }
 
     .logo {
-        width: 52px;
-        height: 52px;
+        width: 58px;
+        height: 58px;
+
+        border-radius: 10px;
+    }
+
+    .brand {
+        gap: 13px;
     }
 
     .title h1 {
-        font-size: 2rem;
+        font-size: 2.3rem;
+
         letter-spacing: -1px;
+    }
+
+    .title p {
+        font-size: 9px;
     }
 
     .summary {
         grid-template-columns: 1fr 1fr;
-        gap: 10px;
+
+        gap: 8px;
     }
 
     .summary-card {
@@ -379,13 +672,26 @@ footer strong {
     }
 
     .summary-card .value {
-        font-size: 22px;
+        font-size: 21px;
+    }
+
+    .summary-card .label {
+        font-size: 9px;
     }
 
     .chart-card,
     .ranking {
         padding: 18px;
-        border-radius: 18px;
+
+        border-radius: 12px;
+    }
+
+    .section-header {
+        align-items: flex-start;
+    }
+
+    .section-header h2 {
+        font-size: 22px;
     }
 
     .legend {
@@ -394,5 +700,79 @@ footer strong {
 
     .chart-wrapper {
         height: 380px;
+    }
+}
+
+/* ==============================
+   LIGHT MODE
+   ============================== */
+
+@media (prefers-color-scheme: light) {
+
+    :root {
+        --bg: #F3EFE6;
+
+        --card: #FAF8F2;
+
+        --card-hover: #FFFFFF;
+
+        --text: #12201A;
+
+        --muted: #66756D;
+
+        --border: rgba(18, 32, 26, 0.12);
+    }
+
+    body {
+        background:
+            radial-gradient(
+                circle at 10% 0%,
+                rgba(63, 111, 82, 0.10),
+                transparent 30%
+            ),
+            var(--bg);
+
+        color: var(--text);
+    }
+
+    .title h1 {
+        color: var(--ink);
+    }
+
+    .summary-card,
+    .chart-card,
+    .ranking {
+        background:
+            linear-gradient(
+                145deg,
+                rgba(255, 255, 255, 0.78),
+                rgba(243, 239, 230, 0.95)
+            );
+
+        box-shadow:
+            0 15px 40px rgba(18, 32, 26, 0.07);
+    }
+
+    .summary-card .value,
+    .video-title,
+    .views,
+    .current-value {
+        color: var(--ink);
+    }
+
+    .previous-value {
+        color: #718278;
+    }
+
+    .ranking-table td {
+        border-bottom-color: rgba(18, 32, 26, 0.07);
+    }
+
+    .ranking-table tbody tr:hover {
+        background: rgba(15, 61, 46, 0.035);
+    }
+
+    .section-header h2 {
+        color: var(--ink);
     }
 }
