@@ -4,6 +4,73 @@
         "videos": [
             {
                 "rank": 1,
+                "views": 2983,
+                "title": "Característica, Instalação e execução de testes com Playwright",
+                "url": "https://www.youtube.com/watch?v=qSYWRtROGE4"
+            },
+            {
+                "rank": 2,
+                "views": 2178,
+                "title": "Instalação do Cypress",
+                "url": "https://www.youtube.com/watch?v=ZOQD8eqqZQ0"
+            },
+            {
+                "rank": 3,
+                "views": 1930,
+                "title": "Testes Manuais e Documentação utilizando o site OrangeHRM",
+                "url": "https://www.youtube.com/watch?v=Pbf0WR9ZqvI"
+            },
+            {
+                "rank": 4,
+                "views": 1681,
+                "title": "Testes de Performance no Postman | Guia Prático",
+                "url": "https://www.youtube.com/watch?v=o5iJea_KPDU"
+            },
+            {
+                "rank": 5,
+                "views": 1483,
+                "title": "Testes de Performance com Grafana k6",
+                "url": "https://www.youtube.com/watch?v=9yRFhwBS0-8"
+            },
+            {
+                "rank": 6,
+                "views": 1418,
+                "title": "JMeter - Introdução",
+                "url": "https://www.youtube.com/watch?v=q7BBdKXdxu0"
+            },
+            {
+                "rank": 7,
+                "views": 1096,
+                "title": "Selion - Automação de testes sem complicação",
+                "url": "https://www.youtube.com/watch?v=1Jwn9d2UNgE"
+            },
+            {
+                "rank": 8,
+                "views": 1037,
+                "title": "A importância dos Testes Manuais - Login",
+                "url": "https://www.youtube.com/watch?v=lLwK2ralQUA"
+            },
+            {
+                "rank": 9,
+                "views": 975,
+                "title": "Teste de Performance - Introdução - Tipos de Testes",
+                "url": "https://www.youtube.com/watch?v=JCFmRFbOC-0"
+            },
+            {
+                "rank": 10,
+                "views": 937,
+                "title": "Característica, Instalação e execução de testes com Robot Framework",
+                "url": "https://www.youtube.com/watch?v=Ua6KaBvAuWw"
+            }           
+            
+        ]
+    },
+
+    "semanaAtual": {
+        "periodo": "Semana atual",
+        "videos": [
+            {
+                "rank": 1,
                 "views": 3038,
                 "title": "Característica, Instalação e execução de testes com Playwright",
                 "url": "https://www.youtube.com/watch?v=qSYWRtROGE4"
@@ -59,74 +126,6 @@
             {
                 "rank": 10,
                 "views": 943,
-                "title": "Característica, Instalação e execução de testes com Robot Framework",
-                "url": "https://www.youtube.com/watch?v=Ua6KaBvAuWw"
-            }           
-            
-        ]
-    },
-
-    "semanaAtual": {
-        "periodo": "Semana atual",
-        "videos": [
-            {
-                "rank": 1,
-                "views": 3098,
-                "title": "Característica, Instalação e execução de testes com Playwright",
-                "url": "https://www.youtube.com/watch?v=qSYWRtROGE4"
-            },
-            {
-                "rank": 2,
-                "views": 2250,
-                "title": "Instalação do Cypress",
-                "url": "https://www.youtube.com/watch?v=ZOQD8eqqZQ0"
-            },
-            {
-                "rank": 3,
-                "views": 1959,
-                "title": "Testes Manuais e Documentação utilizando o site OrangeHRM",
-                "url": "https://www.youtube.com/watch?v=Pbf0WR9ZqvI"
-            },
-            {
-                "rank": 4,
-                "views": 1702,
-                "title": "Testes de Performance no Postman | Guia Prático",
-                "url": "https://www.youtube.com/watch?v=o5iJea_KPDU"
-            },
-            {
-                "rank": 5,
-                "views": 1537,
-                "title": "Testes de Performance com Grafana k6",
-                "url": "https://www.youtube.com/watch?v=9yRFhwBS0-8"
-            },
-            {
-                "rank": 6,
-                "views": 1441,
-                "title": "JMeter - Introdução",
-                "url": "https://www.youtube.com/watch?v=q7BBdKXdxu0"
-            },
-            {
-                "rank": 7,
-                "views": 1122,
-                "title": "A importância dos Testes Manuais - Login",
-                "url": "https://www.youtube.com/watch?v=lLwK2ralQUA"
-                
-            },
-            {
-                "rank": 8,
-                "views": 1103,
-                "title": "Selion - Automação de testes sem complicação",
-                "url": "https://www.youtube.com/watch?v=1Jwn9d2UNgE"
-            },
-            {
-                "rank": 9,
-                "views": 1027,
-                "title": "Teste de Performance - Introdução - Tipos de Testes",
-                "url": "https://www.youtube.com/watch?v=JCFmRFbOC-0"
-            },
-            {
-                "rank": 10,
-                "views": 956,
                 "title": "Característica, Instalação e execução de testes com Robot Framework",
                 "url": "https://www.youtube.com/watch?v=Ua6KaBvAuWw"
             }
